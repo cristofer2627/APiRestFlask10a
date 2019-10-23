@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block header %}
+  <h1>{% block title %}Usuarios{% endblock %}</h1>
+{% endblock %}
+
+{% block content %}
+  <form method="post">
+    <label for="title">Nombre completo</label>
+    <input name="title" id="title" value="{{ request.form['title'] }}" required>
+    <label for="body">Edad</label>
+    <input name="body" id="body">{{ request.form['body'] }}</input>
+    <label for="title">Email</label>
+    <input name="email" id="email" value="{{ request.form['email'] }}" required>
+    <input type="submit" value="Guardar">
+  </form>
+{% endblock %}
